@@ -9,7 +9,8 @@ Vue.use(Router)
 
 export default new Router({
     mode: 'history',
-    base: 'test',
+    // use base if app not running in route directory
+    // base: 'test',
     routes: [
         {
             path: '/',
