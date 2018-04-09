@@ -1,5 +1,11 @@
 'use strict'
 
+const config = require('../config');
+const env = JSON.parse(config.dev.env.NODE_ENV);
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = env
+}
+
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge')
@@ -13,6 +19,10 @@ const webpackConfig = merge(baseWebpackConfig, {
         hot: true
     },
     plugins: [
+        // http://vuejs.github.io/vue-loader/en/workflow/production.html
+        new webpack.DefinePlugin({
+          'process.env': env
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',

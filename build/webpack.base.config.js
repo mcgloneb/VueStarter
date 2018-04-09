@@ -1,8 +1,8 @@
 'use strict'
 
-const path = require('path')
-const utils = require('./utils')
-const config = require('../config')
+const utils = require('./utils');
+const path = require('path');
+const config = require('../config');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -28,6 +28,15 @@ module.exports = {
             {
               test: /\.js$/,
               loader: 'babel-loader'
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: utils.inlineImageSizeLimit(),
+                    publicPath: "images",
+                    outputPath: "images"
+                }
             },
             {
               test: /\.scss$/,

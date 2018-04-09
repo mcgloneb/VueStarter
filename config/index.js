@@ -8,10 +8,12 @@ module.exports = {
         env: require('./prod.env'),
         assetsSubDirectory: 'static',
         index: path.resolve(__dirname, '../dist/index.html'),
-        assetsRoot: path.resolve(__dirname, '../dist')
+        assetsRoot: path.resolve(__dirname, '../dist'),
+        inlineLimit: 10000
     },
     dev: {
         env: require('./dev.env'),
-        assetsSubDirectory: 'static'
+        assetsSubDirectory: 'static',
+        inlineLimit: 5000000
     }
 }
