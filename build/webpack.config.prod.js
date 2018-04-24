@@ -27,7 +27,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         new webpack.DefinePlugin({
           'process.env': env
         }),
-        new CleanWebpackPlugin(['../dist/static'], { allowExternal: true, verbose:  true }),
+        new CleanWebpackPlugin(['../dist/static', '../dist/images'], { allowExternal: true, verbose:  true }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',

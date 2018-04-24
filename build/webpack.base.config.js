@@ -16,7 +16,8 @@ module.exports = {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@': resolve('src')
+            '@': resolve('src'),
+            'font' : path.resolve(__dirname, '../static/font')
         }
     },
     module: {
@@ -37,6 +38,13 @@ module.exports = {
                     publicPath: "images",
                     outputPath: "images"
                 }
+            },
+            {
+                test: /\.(ttf|eot|woff|woff2)$/,
+                loader: "file-loader",
+                options: {
+                    name: "fonts/[name].[ext]",
+                },
             },
             {
               test: /\.scss$/,
