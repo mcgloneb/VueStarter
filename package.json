@@ -1,7 +1,7 @@
 {
-  "name": "oracleinterns",
+  "name": "vuestarter",
   "version": "1.0.0",
-  "description": "Oracle Intern Website",
+  "description": "Vue Starter Package",
   "main": "./src/main.js",
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.config.dev.js",
@@ -35,6 +35,8 @@
   },
   "dependencies": {
     "vue": "^2.5.16",
-    "vue-router": "^3.0.1"
+    "vue-cookie": "^1.1.4",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"   
   }
 }
